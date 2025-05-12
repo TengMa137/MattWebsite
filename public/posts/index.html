@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/MattWebsite/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=MattWebsite/livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>
   Posts · Welcome
 </title>
@@ -22,7 +22,7 @@
   <meta name="twitter:title" content="Posts">
   <meta name="twitter:description" content="Matt&#39;s personal website">
 
-<meta property="og:url" content="http://localhost:1313/MattWebsite/posts/">
+<meta property="og:url" content="http://localhost:1313/posts/">
   <meta property="og:site_name" content="Welcome">
   <meta property="og:title" content="Posts">
   <meta property="og:description" content="Matt&#39;s personal website">
@@ -32,7 +32,8 @@
 
 
 
-<link rel="canonical" href="http://localhost:1313/MattWebsite/posts/">
+<link rel="canonical" href="http://localhost:1313/posts/">
+
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -42,7 +43,7 @@
 
   
   
-  <link rel="stylesheet" href="/MattWebsite/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
 
 
 
@@ -52,7 +53,7 @@
   
     
     
-    <link rel="stylesheet" href="/MattWebsite/css/coder-dark.css" media="screen">
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
   
 
 
@@ -73,12 +74,47 @@
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link rel="alternate" type="application/rss+xml" href="/MattWebsite/posts/index.xml" title="Welcome" />
+<link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="Welcome" />
 
 
 
 
 
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    packages: {'[+]': ['ams', 'noerrors']}
+  },
+  svg: {
+    fontCache: 'global'
+  },
+  options: {
+    renderActions: {
+       
+      find_script_mathtex: [10, function (doc) {
+        for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+          const display = !!node.type.match(/; *mode=display/);
+          const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+          const text = document.createTextNode('');
+          node.parentNode.replaceChild(text, node);
+          math.start = {node: text, delim: '', n: 0};
+          math.end = {node: text, delim: '', n: 0};
+          doc.math.push(math);
+        }
+      }, '']
+    }
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 
 </head>
@@ -101,7 +137,7 @@
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/MattWebsite/">
+    <a class="navigation-title" href="http://localhost:1313/">
       Welcome
     </a>
     
@@ -114,19 +150,19 @@
         
           
             <li class="navigation-item">
-              <a class="navigation-link " href="/MattWebsite/about/">About</a>
+              <a class="navigation-link " href="/about/">About</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link " href="/MattWebsite/posts/">Blog</a>
+              <a class="navigation-link " href="/posts/">Blog</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link " href="/MattWebsite/projects/">Projects</a>
+              <a class="navigation-link " href="/projects/">Projects</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link " href="/MattWebsite/contact/">Contact me</a>
+              <a class="navigation-link " href="/archive/">Archive</a>
             </li>
           
         
@@ -144,7 +180,7 @@
                 
               
               <li class="navigation-item">
-                <a href="/MattWebsite/zh/">中文</a>
+                <a href="/zh/">ZH</a>
               </li>
             
           
@@ -160,15 +196,35 @@
   <section class="container list">
     <header>
       <h1 class="title">
-        <a class="title-link" href="http://localhost:1313/MattWebsite/posts/">
+        <a class="title-link" href="http://localhost:1313/posts/">
           Posts
         </a>
       </h1>
     </header>
     
     <ul><li>
-  <span class="date">May 8, 2025</span>
-  <a class="title" href="/MattWebsite/posts/my-first-post/">My First Post</a>
+  <span class="date">August 30, 2024</span>
+  <a class="title" href="/posts/2024-8-30-km/">Hungarian Algorithm in multiple object tracking</a>
+</li>
+<li>
+  <span class="date">May 31, 2024</span>
+  <a class="title" href="/posts/2024-5-30-kvcache/">LLMs Inference speed up EP1 - kv cache</a>
+</li>
+<li>
+  <span class="date">April 3, 2024</span>
+  <a class="title" href="/posts/2024-4-4-chatbot/">DIY - a multi-platform AI assistant</a>
+</li>
+<li>
+  <span class="date">March 14, 2024</span>
+  <a class="title" href="/posts/2024-3-14-ddpm/">Diffusion Probabilistic Models</a>
+</li>
+<li>
+  <span class="date">December 31, 2023</span>
+  <a class="title" href="/posts/2023-12-31-vae/">Variational Autoencoder explained</a>
+</li>
+<li>
+  <span class="date">October 10, 2023</span>
+  <a class="title" href="/posts/2023-10-10-dl/">Supervised Learning EP2 - An introduction to Deep Learning</a>
 </li>
 </ul>
 
@@ -177,6 +233,37 @@
 
 
 
+
+<ul class="pagination">
+  
+  
+    
+    
+      
+    
+    
+      
+      <li>1</li>
+      
+    
+  
+    
+    
+      
+    
+    
+      
+      <li><a href="/posts/page/2/">2</a></li>
+      
+    
+  
+  
+    <li class="hidden"><a href="/posts/page/2/">&rsaquo;</a></li>
+    
+    <li><a href="/posts/page/2/">&raquo;</a></li>
+    
+  
+</ul>
 
 
   </section>
@@ -202,7 +289,7 @@
 
   
   
-  <script src="/MattWebsite/js/coder.js"></script>
+  <script src="/js/coder.js"></script>
   
 
   

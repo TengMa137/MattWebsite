@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 
-<head><script src="/MattWebsite/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=MattWebsite/livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>Tags · 我的网站</title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
   <meta name="twitter:title" content="Tags">
   <meta name="twitter:description" content="这是我的个人网站">
 
-<meta property="og:url" content="http://localhost:1313/MattWebsite/zh/tags/">
+<meta property="og:url" content="http://localhost:1313/zh/tags/">
   <meta property="og:site_name" content="我的网站">
   <meta property="og:title" content="Tags">
   <meta property="og:description" content="这是我的个人网站">
@@ -30,7 +30,8 @@
 
 
 
-<link rel="canonical" href="http://localhost:1313/MattWebsite/zh/tags/">
+<link rel="canonical" href="http://localhost:1313/zh/tags/">
+
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -40,7 +41,7 @@
 
   
   
-  <link rel="stylesheet" href="/MattWebsite/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
 
 
 
@@ -50,7 +51,7 @@
   
     
     
-    <link rel="stylesheet" href="/MattWebsite/css/coder-dark.css" media="screen">
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
   
 
 
@@ -71,12 +72,47 @@
 <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
 
 
-<link rel="alternate" type="application/rss+xml" href="/MattWebsite/zh/tags/index.xml" title="我的网站" />
+<link rel="alternate" type="application/rss+xml" href="/zh/tags/index.xml" title="我的网站" />
 
 
 
 
 
+
+
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    packages: {'[+]': ['ams', 'noerrors']}
+  },
+  svg: {
+    fontCache: 'global'
+  },
+  options: {
+    renderActions: {
+       
+      find_script_mathtex: [10, function (doc) {
+        for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+          const display = !!node.type.match(/; *mode=display/);
+          const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+          const text = document.createTextNode('');
+          node.parentNode.replaceChild(text, node);
+          math.start = {node: text, delim: '', n: 0};
+          math.end = {node: text, delim: '', n: 0};
+          doc.math.push(math);
+        }
+      }, '']
+    }
+  }
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
 
 </head>
@@ -99,7 +135,7 @@
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/MattWebsite/zh/">
+    <a class="navigation-title" href="http://localhost:1313/zh/">
       我的网站
     </a>
     
@@ -112,19 +148,19 @@
         
           
             <li class="navigation-item">
-              <a class="navigation-link " href="/MattWebsite/zh/about/">张三</a>
+              <a class="navigation-link " href="/zh/about/">张三</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link " href="/MattWebsite/zh/posts/">博客</a>
+              <a class="navigation-link " href="/zh/posts/">博客</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link " href="/MattWebsite/zh/projects/">项目</a>
+              <a class="navigation-link " href="/zh/projects/">项目</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link " href="/MattWebsite/zh/contact/">联系方式</a>
+              <a class="navigation-link " href="/zh/archive/">归档</a>
             </li>
           
         
@@ -140,7 +176,7 @@
                 
               
               <li class="navigation-item">
-                <a href="/MattWebsite/tags/">English</a>
+                <a href="/tags/">EN</a>
               </li>
             
           
@@ -156,7 +192,7 @@
   <section class="container taxonomy">
   <header>
     <h1 class="title">
-      <a class="title-link" href="http://localhost:1313/MattWebsite/zh/tags/">Tags</a>
+      <a class="title-link" href="http://localhost:1313/zh/tags/">Tags</a>
     </h1>
   </header>
   
@@ -188,7 +224,7 @@
 
   
   
-  <script src="/MattWebsite/js/coder.js"></script>
+  <script src="/js/coder.js"></script>
   
 
   

@@ -1,4 +1,4 @@
-baseURL = "https://tengma137.github.io/MattWebsite/"
+baseURL = "https://tengma137.github.io/"
 title = "Welcome"
 theme = "hugo-coder"
 languageCode = "en"
@@ -14,12 +14,12 @@ pagerSize = 6
 # shortname = "yourdiscussshortname"
 
 [markup]
-[markup.highlight]
-noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
-[markup.goldmark]
-[markup.goldmark.renderer]
-unsafe = true
+  [markup.highlight]
+    noClasses = false
 
 [params]
 author = "Matt"
@@ -180,7 +180,7 @@ rel = "alternate"
 type = "application/rss+xml"
 
 [languages.en]
-languageName = "English"
+languageName = "EN"
 
 [[languages.en.menu.main]]
 name = "About"
@@ -198,13 +198,13 @@ weight = 3
 url = "projects/"
 
 [[languages.en.menu.main]]
-name = "Contact me"
+name = "Archive"
 weight = 5
-url = "contact/"
+url = "archive/"
 
 
 [languages.zh]
-languageName = "中文"
+languageName = "ZH"
 title = "我的网站"
 
 [languages.zh.params]
@@ -229,6 +229,6 @@ weight = 3
 url = "projects/"
 
 [[languages.zh.menu.main]]
-name = "联系方式"
+name = "归档"
 weight = 5
-url = "contact/"
+url = "archive/"
